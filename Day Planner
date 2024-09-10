@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+       Scanner myDay = new Scanner(System.in);
+       System.out.println("This program allows you to give you activities based on the day given. \n Make sure to capitalize first letter!");
+       
+       System.out.println("Enter a day: ");
+       String day = myDay.nextLine();
+       
+       switch (day) {
+           case "Monday":
+               System.out.println("Go to a new cafe");
+            break;
+            case "Tuesday":
+               System.out.println("Go to a new cafe");
+            break;
+            case "Wednesday":
+                System.out.println("Watch a movie with your loved ones");
+            break;
+            case "Thursday":
+                System.out.println("Go shopping");
+            break;
+            case "Friday":
+                System.out.println("Join meditation community");
+            break;
+            case "Saturday":
+                System.out.println("Workout");
+            break;
+            case "Sunday":
+                System.out.println("Do household chores");
+            break;
+            default: 
+                System.out.println("Stay at home");
+       }
+        
+    }
+}
