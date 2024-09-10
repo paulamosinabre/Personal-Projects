@@ -1,13 +1,21 @@
 import java.util.Scanner;
-class HelloWorld {
+public class HelloWorld {
+    String day;
+    
+    public HelloWorld(String day) {
+        day = this.day;
+}    
     public static void main(String[] args) {
        Scanner myDay = new Scanner(System.in);
        System.out.println("This program allows you to give you activities based on the day given. \n Make sure to capitalize first letter!");
        
-       System.out.println("Enter a day: ");
-       String day = myDay.nextLine();
-       
-       switch (day) {
+       int i = 0;
+       while (i <= 3){
+           System.out.println("Enter a day: ");
+            String day = myDay.nextLine();
+            break;
+            
+            switch (day) {
            case "Monday":
                System.out.println("Go to a new cafe");
             break;
@@ -31,7 +39,8 @@ class HelloWorld {
             break;
             default: 
                 System.out.println("Stay at home");
-       }
-        
+            }
+       }    
+       
     }
 }
