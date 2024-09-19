@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Practice {
+    static Scanner user = new Scanner(System.in);
+    //static int java;
+    //static int python;
+    //static int php;
+    
+    public static void main(String[] args) {
+        gpaJava();
+        gpaPython();
+        gpaPHP();
+        
+        //System.out.println("Your status in Java is: " + (passOrFail(java)));
+    }
+    
+    public static void gpaJava(){
+        System.out.println("Enter your grade in Java: ");
+        int java = user.nextInt();
+        passOrFail(java);
+    }
+    
+    public static void gpaPython() {
+        System.out.println("Enter your grade in Python: ");
+        int python = user.nextInt();
+        passOrFail(python);
+    }
+    
+    public static void gpaPHP() {
+        System.out.println("Enter your grade in PHP: ");
+        int php = user.nextInt();
+        passOrFail(php);
+    }
+    
+    public static void passOrFail(int status) {
+        if (status >= 60 && status <= 100) {
+            System.out.println("Passed");
+        } else if (status <= 60 && status >= 0) {
+            System.out.println("Failed");
+        } else {
+            System.out.println("Invalid");
+        }
+    }
+    
+}
