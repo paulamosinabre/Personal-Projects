@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Practice {
+    
+    static int randomNumber = (int)(Math.random() *101);
+    static int num;
+    static int attempts = 0;
+    
+    public static void main (String [] args) {
+       getUser();
+       System.out.println("The correct answer is: " + randomNumber);
+       
+    }
+    public static void getUser() {
+        Scanner user = new Scanner(System.in);
+        System.out.println("Guess a number from 1-100: ");
+        
+        num = (0);
+        while (true){
+        attempts++;    
+            num = user.nextInt();
+                if (num <= randomNumber) {
+                    System.out.println("Higher");
+                } else if (num >= randomNumber){
+                    System.out.println("Lower");
+                } else {
+                    System.out.println("Correct!");
+                } // create kung hanngang ilan siya
+                
+                if (attempts >=3) {
+                    System.out.println("YOU FAILED DUMBO");
+                    break;
+                } 
+            System.out.println("DONE!");
+        }  
+    }
+}
