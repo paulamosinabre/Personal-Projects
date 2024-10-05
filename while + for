@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        getLoop();
+    }
+    
+    public static void getLoop() {
+        Scanner myscan = new Scanner(System.in);
+        
+        while (true){
+            System.out.println("Enter a number: ");
+            int num = Integer.valueOf(myscan.nextLine());
+            
+            if (num == 0){
+                System.out.println("\nClosing... ");
+                System.out.println("-End-");
+                break;
+            }
+            
+            for(int i = 0; i < num; i++){
+                 System.out.print(i);
+                 
+                 if(i < num - 1){
+                     System.out.print(", ");
+                 }
+            }
+            System.out.println("\n");
+        }
+    }
+}
