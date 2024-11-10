@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Tiramisu Cake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h1 class="logo">Tiramisu Cake</h1>
+            <img src="miffy.jpg">
+        </div>
+    </div>
+</body>
+</html>
