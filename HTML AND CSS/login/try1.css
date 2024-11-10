@@ -1,0 +1,97 @@
+* {
+    background-color: #eff2f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: baseline;
+}
+.header {
+    display: inline;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+#logo {
+    /* font-family: fira-sans; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    padding-left: 100px;
+    padding-top: 60px;
+    color: #0068fe;
+    font-size: 40px;
+    height: 25px;
+    font-weight: 100%
+}
+
+.p1 {
+    font-family: Helvetica, sans-serif;
+    font-size: 35px;
+    padding-left: 100px;
+    height: 15px;
+    color: #333333;
+}
+
+.p2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    padding-left: 100px;
+    color: #5e6770;
+}
+
+.login {
+    width:450px;
+    height:380px;
+    background-color: white;
+    border-bottom: 5px;
+    border-top: 5px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin-top: 60px;
+    margin-left: 250px;
+}
+
+.login input{
+    width: 350px;
+    height: 50px;
+    border: 10px;
+    border-radius: 10px;
+    border-color: rgb(175, 174, 174);
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.login input focus {
+    outline: none;
+}
+
+::placeholder {
+    color: rgb(175, 174, 174);
+    padding-left: 5px;
+}
+/*what */
+
+.login {
+    width:450px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 60px;
+    margin-left: 60px;
+    box-shadow: 0px 2px 10px 1px #d3d3d3;
+}
+
+.login input{
+    width: 100%;
+    border: 10px;
+    box-sizing:border-box;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
