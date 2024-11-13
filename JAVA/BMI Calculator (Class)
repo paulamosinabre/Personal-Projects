@@ -1,0 +1,85 @@
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Calculator implements ActionListener {
+    
+        JTextField weightField,heightField,resultField;
+        JLabel categoriesLabel;
+        JButton button;
+       
+        
+        Calculator(){
+            JFrame frame = new JFrame("BMI Calculator"); //this is the main frame
+            JPanel panel = new JPanel(); //a panel to hold components
+            
+            JLabel weightLabel = new JLabel("weight(kg)");
+            JLabel heightLabel = new JLabel("height (m)");
+            JLabel resultLabel = new JLabel("BMI: ");
+            categoriesLabel = new JLabel();
+            
+            weightField = new JTextField();
+            heightField = new JTextField();
+            resultField = new JTextField();
+            
+            
+            button = new JButton("Calculate");
+            
+             frame.setSize(500,300);
+             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+             frame.setTitle("BMI Calculator");
+             
+             weightLabel.setBounds(20,20,60,20);
+             heightLabel.setBounds(20,50,60,20);
+             resultLabel.setBounds(20,80,60,20);
+             categoriesLabel.setBounds(170,110,150,20);
+             
+             weightField.setBounds(150,20,150,20);
+             heightField.setBounds(150,50,150,20);
+             resultField.setBounds(150,80,150,20);
+             resultField.setEditable(false);
+             
+             
+             categoriesLabel.setFont(new Font("Monospaced", Font.BOLD,12));
+             categoriesLabel.setForeground(new Color(255,0,0));
+             
+             button.setFont(new Font("Monospaced", Font.PLAIN,12));
+             button.setBounds(170, 170, 100, 30);
+             button.addActionListener(this);
+             
+             frame.getContentPane().setBackground(new Color(255,182,193));
+             frame.add(weightLabel);
+             frame.add(heightLabel);
+             frame.add(resultLabel);
+             frame.add(weightField);
+             frame.add(heightField);
+             frame.add(resultField);
+             frame.add(button);
+             frame.add(categoriesLabel);
+             frame.setLayout(null);
+             frame.setVisible(true); 
+ 
+        }
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            if(e.getSource() == button){
+                double weight = Double.parseDouble(weightField.getText());
+                double height = Double.parseDouble(heightField.getText());
+                double bmi = weight / (height * height);
+                
+                if(bmi <= 18.4){
+                    categoriesLabel.setText("You are Underweight");
+                } else if (bmi >= 18.5 && bmi <= 24.9){
+                    categoriesLabel.setText("You are Normal");
+                } else if (bmi >= 25 && bmi <= 29.9){
+                    categoriesLabel.setText("You are Overweight");
+                } else {
+                    categoriesLabel.setText("You are Obese");
+                } 
+                resultField.setText(String.format("%.2f", bmi));
+            }
+        }
+
+}
