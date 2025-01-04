@@ -1,0 +1,84 @@
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class Calculator implements ActionListener{
+    JFrame frame = new JFrame();
+    JLabel labelNum1 = new JLabel("Enter a number");
+    JLabel labelNum2 = new JLabel("Enter a number");
+    JLabel resultLabel = new JLabel("Answer");
+    JTextField textNum1 = new JTextField();
+    JTextField textNum2 = new JTextField();
+    JTextField textResult = new JTextField();
+    JButton addButton = new JButton("+");
+    JButton minusButton = new JButton("-");
+    JButton divideButton = new JButton("/");
+    JButton timesButton = new JButton("x");
+    
+    public Calculator(){
+        frame.setSize(400,300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
+        
+        labelNum1.setBounds(50, 30, 120, 20);
+        textNum1.setBounds(200, 30, 150, 20);
+        labelNum2.setBounds(50, 70, 120, 20);
+        textNum2.setBounds(200, 70, 150, 20);
+        resultLabel.setBounds(50, 110, 120, 20);
+        textResult.setBounds(200, 110, 150, 20);
+
+        // Position buttons
+        addButton.setBounds(50, 150, 60, 40);
+        minusButton.setBounds(120, 150, 60, 40);
+        timesButton.setBounds(50, 200, 60, 40);
+        divideButton.setBounds(120, 200, 60, 40);
+        
+       
+        addButton.addActionListener(this);
+        minusButton.addActionListener(this);
+        timesButton.addActionListener(this);
+        divideButton.addActionListener(this);
+        
+        frame.add(textNum1);
+        frame.add(textNum2);
+        frame.add(textResult);
+        frame.add(labelNum1);
+        frame.add(labelNum2);
+        frame.add(resultLabel);
+        frame.add(addButton);
+        frame.add(minusButton);
+        frame.add(divideButton);
+        frame.add(timesButton);
+        frame.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try {
+            double num1 = Double.parseDouble(textNum1.getText());
+            double num2 = Double.parseDouble(textNum2.getText());
+            double answer = 0;
+           
+            if(e.getSource() == addButton){
+               answer = num1 + num2;
+            } else if (e.getSource() == minusButton){
+                answer = num1 - num2;            
+            } else if (e.getSource() == timesButton){
+                answer = num1 * num2;            
+            } else if (e.getSource() == divideButton){
+                if (num2 == 0){
+                    throw new ArithmeticException("Cannot divide by zero");
+                }
+                answer = num1 / num2;            
+            }
+            textResult.setText(String.format("%.2f",answer));
+        } catch (NumberFormatException ex){
+            JOptionPane.showMessageDialog(frame, "Please type a number!");
+        } catch (ArithmeticException ex){
+            JOptionPane.showMessageDialog(frame, ex.getMessage());
+        } catch (Exception ex){
+            JOptionPane.showMessageDialog(frame, "Please enter a number first");
+        }
+    }
+}
