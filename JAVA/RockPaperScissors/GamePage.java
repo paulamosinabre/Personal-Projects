@@ -50,6 +50,7 @@ public class GamePage extends javax.swing.JFrame {
         btnRock = new javax.swing.JButton();
         btnPaper = new javax.swing.JButton();
         btnScissors = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         lblResult = new javax.swing.JLabel();
         lblPlayerTitle = new javax.swing.JLabel();
         lblPlayerScore = new javax.swing.JLabel();
@@ -59,9 +60,7 @@ public class GamePage extends javax.swing.JFrame {
         bgGamePanel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(748, 438));
         setMinimumSize(new java.awt.Dimension(748, 438));
-        setPreferredSize(new java.awt.Dimension(748, 438));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         gamePanel.setMaximumSize(new java.awt.Dimension(748, 400));
@@ -102,6 +101,16 @@ public class GamePage extends javax.swing.JFrame {
             }
         });
         gamePanel.add(btnScissors, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, -1, -1));
+
+        backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\paula\\OneDrive\\Documents\\BACK-removebg-preview.png")); // NOI18N
+        backBtn.setBorder(null);
+        backBtn.setContentAreaFilled(false);
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+        gamePanel.add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         lblResult.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblResult.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,6 +175,14 @@ public class GamePage extends javax.swing.JFrame {
         btnRock.setBackground(Color.gray);
         player = 1;
         checkResult();
+    }                                       
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        FrmStartPage startPage = new FrmStartPage();
+        startPage.setVisible(true);
+        this.dispose();
+        bgmGame.stop();
     }                                       
 
     void generateComputer() {
@@ -301,6 +318,7 @@ public class GamePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel bgGamePanel;
     private javax.swing.JButton btnPaper;
     private javax.swing.JButton btnRock;
